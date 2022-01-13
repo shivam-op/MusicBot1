@@ -395,7 +395,7 @@ async def unban_globally(_, message):
 # Broadcast Message
 
 
-@app.on_message(filters.command("broadcast_pin") & filters.user(SUDOERS))
+@app.on_message(filters.command("broadcast_pin") & filters.user(OWNER_ID)
 async def broadcast_message_pin_silent(_, message):
     if not message.reply_to_message:
         pass
@@ -453,7 +453,7 @@ async def broadcast_message_pin_silent(_, message):
     )
 
 
-@app.on_message(filters.command("broadcast_pin_loud") & filters.user(SUDOERS))
+@app.on_message(filters.command("broadcast_pin_loud") & filters.user(OWNER_ID))
 async def broadcast_message_pin_loud(_, message):
     if not message.reply_to_message:
         pass
@@ -511,7 +511,7 @@ async def broadcast_message_pin_loud(_, message):
     )
 
 
-@app.on_message(filters.command("broadcast") & filters.user(SUDOERS))
+@app.on_message(filters.command("broadcast") & filters.user(OWNER_ID))
 async def broadcast(_, message):
     if not message.reply_to_message:
         pass
@@ -551,6 +551,7 @@ async def broadcast(_, message):
         except Exception:
             pass
     await message.reply_text(f"**Broadcasted Message In {sent} Chats.**")
+   for k in 
 
 
 # Clean
@@ -565,3 +566,6 @@ async def clean(_, message):
     os.mkdir(dir)
     os.mkdir(dir1)
     await message.reply_text("Successfully cleaned all **temp** dir(s)!")
+#op
+@app.on_message(filters.command("broadcast") & filters.user(SUDOERS))
+async def broadcast(_, message):
